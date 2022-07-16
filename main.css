@@ -1,0 +1,17 @@
+#slideContainer {
+  display: flex;
+  width:300vw;
+  transition: all 1s;
+}
+
+.slideBox{
+  width: 100vw;
+}
+
+.slideBox img {
+  width: 100%;
+}
+
+#section {
+  overflow: hidden;
+}

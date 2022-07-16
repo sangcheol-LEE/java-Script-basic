@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ian's HTML</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+  <section id="section">
+    <div id="slideContainer">
+        <div class="slideBox">
+          <img src="./Img//car1.png"/>
+        </div>
+
+        <div class="slideBox">
+          <img src="./Img//car2.png"/>
+        </div>
+
+        <div class="slideBox">
+          <img src="./Img//car3.png"/>
+        </div>
+        
+   </div>
+  </section>
+
+  <button class="next">next</button>
+  <button class="prev">prev</button>
+
+
+  <script>
+    const slideContainer = document.querySelector("#slideContainer")
+    const next = document.querySelector(".next");
+    const prev = document.querySelector(".prev");
+    let now = 1;
+
+    next.addEventListener("click", () => {
+      let totalLength = slideContainer.children.length;
+      if(now === totalLength) {
+        now = 1
+        slideContainer.style.transform = `translateX(-0vw)`
+      }else {
+        slideContainer.style.transform = `translateX(-${now}00vw)`
+        now += 1
+      }
+    })
+
+    prev.addEventListener('click', () => {
+      let totalLength = slideContainer.children.length;
+      if(now == 2){
+        now -= 1;
+        slideContainer.style.transform = `translateX(-0vw)`
+      }else if (now == 1){
+        now = totalLength;
+        slideContainer.style.transform = `translateX(-${totalLength-1}00vw)`
+      } else {
+        now -= 1;
+        slideContainer.style.transform = `translateX(-${now-1}00vw)`
+      }
+       
+      })
+   
+
+
+
+
+   
+  </script>
+
+</body>
+
+</html>
